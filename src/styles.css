@@ -17,3 +17,16 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 }
+
+.nav-header {
+  position: absolute;
+  background: none;
+  display: inline-block;
+  z-index: 1; /* put in front of canvas */
+}
+
+.nav-header a {
+  color: white;
+  padding: 1rem;
+  display: inline-block;
+}

@@ -6,12 +6,13 @@
     "three.js",
     "react-three-fiber"
   ],
-  "main": "src/index.js",
+  "main": "src/index.jsx",
   "dependencies": {
     "@react-three/drei": "9.43.2",
     "@react-three/fiber": "8.9.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "three": "0.146.0"
   },
