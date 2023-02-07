@@ -1,7 +1,10 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import Navigation from './Navigation';
 import { useRef } from "react";
-import { Box, OrbitControls } from "@react-three/drei";
+
+import { TorusKnot } from "@react-three/drei";
+
+import { Flex, Box } from '@react-three/flex'
 
 const Scene = () => {
     const scene = useRef();
@@ -11,9 +14,9 @@ const Scene = () => {
     });
     return (
       <group ref={scene}>
-        <Box>
+        <TorusKnot>
           <meshLambertMaterial color="white" />
-        </Box>
+        </TorusKnot>
       </group>
     );
 };
@@ -27,7 +30,6 @@ export default function ExampleOne()  {
           <ambientLight intensity={0.04} />
           <directionalLight intensity={0.5} color={[0.3, 0.0, 0.0]} />
           <Scene />
-          <OrbitControls />
         </Canvas>
       </>     
     )
