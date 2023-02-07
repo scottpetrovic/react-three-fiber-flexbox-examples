@@ -1,13 +1,12 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Box } from "@react-three/drei";
+import { Box, OrbitControls } from "@react-three/drei";
 import "./styles.css";
 const Scene = () => {
   const scene = useRef();
-  useFrame(() => {
-    scene.current.rotation.y += 0.04;
-    scene.current.rotation.x += 0.04;
-    scene.current.rotation.z += 0.04;
+  useFrame((_state, delta) => {
+    scene.current.rotation.x += 0.5 * delta;
+    scene.current.rotation.z += 0.5 * delta;
   });
   return (
     <group ref={scene}>
@@ -20,9 +19,14 @@ const Scene = () => {
 
 export default function App() {
   return (
+    <>
     <Canvas>
+      <ambientLight intensity={0.04} />
       <directionalLight intensity={0.5} />
       <Scene />
+      <OrbitControls />
     </Canvas>
+    </>
+    
   );
 }
